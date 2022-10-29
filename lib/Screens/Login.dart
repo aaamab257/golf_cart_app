@@ -12,6 +12,9 @@ class LoginPageScreen extends StatefulWidget {
 
 class _LoginPageScreenState extends State<LoginPageScreen> {
   bool _showPassword = false;
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
   void _togglevisibility() {
     setState(() {
       _showPassword = !_showPassword;
@@ -55,6 +58,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: new TextFormField(
+                      controller: _emailController,
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if (value.isEmpty) {
@@ -76,6 +80,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
+                      controller: _passwordController,
                       textInputAction: TextInputAction.next,
                       onFieldSubmitted: (_) => FocusScope.of(context)
                           .nextFocus(), // move focus to next
@@ -158,7 +163,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                         ),
                         textColor: Colors.white,
                         onPressed: () {
-                          print('Logged In');
+                          if (_emailController.text.isEmpty) {}
                         },
                       ),
                     ),
