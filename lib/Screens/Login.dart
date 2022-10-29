@@ -1,7 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:loginandregister_flutter/Screens/Home.dart';
 import 'package:loginandregister_flutter/Screens/Register.dart';
 
 class LoginPageScreen extends StatefulWidget {
@@ -90,7 +87,7 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                         return null;
                       },
                       decoration: InputDecoration(
-                        hintText: "Password",
+                        labelText: "Password",
                         border: OutlineInputBorder(),
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 10.0),
