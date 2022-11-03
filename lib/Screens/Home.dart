@@ -47,22 +47,39 @@ class _MyHomePageState extends State<MyHomePage> {
                     margin: EdgeInsets.all(20),
                     decoration:
                         BoxDecoration(borderRadius: BorderRadius.circular(30)),
-                    child: FlatButton(
-                      minWidth: MediaQuery.of(context).size.width,
-                      height: 45,
-                      child: Text('Getting Started'),
-                      color: Colors.blueAccent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      textColor: Colors.white,
+                    child: TextButton(
                       onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => LoginPageScreen()));
                       },
+                      style: TextButton.styleFrom(
+                        backgroundColor: Colors.blue,
+                        minimumSize:
+                            Size(MediaQuery.of(context).size.width, 50),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      child: Text('Getting Started',
+                          style: TextStyle(color: Colors.white, fontSize: 18)),
                     ),
+                    // child: FlatButton(
+                    //   minWidth: MediaQuery.of(context).size.width,
+                    //   height: 45,
+                    //   child: Text('Getting Started'),
+                    //   color: Colors.blueAccent,
+                    //   shape: RoundedRectangleBorder(
+                    //     borderRadius: BorderRadius.circular(10),
+                    //   ),
+                    //   textColor: Colors.white,
+                    //   onPressed: () {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //             builder: (context) => LoginPageScreen()));
+                    //   },
+                    // ),
                   ),
                   InkWell(
                       onTap: () {

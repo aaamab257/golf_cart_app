@@ -63,7 +63,7 @@ class _RegisterPageScreenScreen extends State<RegisterPageScreen> {
                         return null;
                       },
                       decoration: new InputDecoration(
-                        labelText: 'Username',
+                        labelText: 'Name',
                         border: OutlineInputBorder(),
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 15.0, horizontal: 10.0),
@@ -188,19 +188,34 @@ class _RegisterPageScreenScreen extends State<RegisterPageScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30)),
-                      child: FlatButton(
-                        minWidth: MediaQuery.of(context).size.width,
-                        height: 45,
-                        child: Text('Register'),
-                        color: Colors.blueAccent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        textColor: Colors.white,
+                      child: TextButton(
                         onPressed: () {
                           print('Register Clicked');
                         },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          minimumSize:
+                              Size(MediaQuery.of(context).size.width, 50),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        child: Text('Register',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)),
                       ),
+                      // child: FlatButton(
+                      //   minWidth: MediaQuery.of(context).size.width,
+                      //   height: 45,
+                      //   child: Text('Register'),
+                      //   color: Colors.blueAccent,
+                      //   shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //   ),
+                      //   textColor: Colors.white,
+                      //   onPressed: () {
+                      //     print('Register Clicked');
+                      //   },
+                      // ),
                     ),
                   ),
                   InkWell(

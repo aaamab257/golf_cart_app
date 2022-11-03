@@ -123,29 +123,38 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30)),
-                      child: FlatButton(
-                        minWidth: MediaQuery.of(context).size.width,
-                        height: 20,
+                      child: TextButton(
+                        onPressed: () {},
                         child: Align(
                           alignment: Alignment.centerRight,
-                          child: Text(
-                            "Forgot Password?",
-                            style: TextStyle(
-                                fontSize: 15.0, color: Colors.grey[600]),
-                            textAlign: TextAlign.right,
-                          ),
+                          child: Text('Forgot Password?',
+                              style:
+                                  TextStyle(color: Colors.blue, fontSize: 14)),
                         ),
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        textColor: Colors.white,
-                        onPressed: () {
-                          print(
-                            "Forgot Passworda Clicked",
-                          );
-                        },
                       ),
+                      // child: FlatButton(
+                      //   minWidth: MediaQuery.of(context).size.width,
+                      //   height: 20,
+                      //   child: Align(
+                      //     alignment: Alignment.centerRight,
+                      //     child: Text(
+                      //       "Forgot Password?",
+                      //       style: TextStyle(
+                      //           fontSize: 15.0, color: Colors.grey[600]),
+                      //       textAlign: TextAlign.right,
+                      //     ),
+                      //   ),
+                      //   color: Colors.white,
+                      //   shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //   ),
+                      //   textColor: Colors.white,
+                      //   onPressed: () {
+                      //     print(
+                      //       "Forgot Passworda Clicked",
+                      //     );
+                      //   },
+                      // ),
                     ),
                   ),
                   Padding(
@@ -153,18 +162,33 @@ class _LoginPageScreenState extends State<LoginPageScreen> {
                     child: Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30)),
-                      child: FlatButton(
-                        minWidth: MediaQuery.of(context).size.width,
-                        height: 45,
-                        child: Text('Login'),
-                        color: Colors.blueAccent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        textColor: Colors.white,
+                      // child: FlatButton(
+                      //   minWidth: MediaQuery.of(context).size.width,
+                      //   height: 45,
+                      //   child: Text('Login'),
+                      //   color: Colors.blueAccent,
+                      //   shape: RoundedRectangleBorder(
+                      //     borderRadius: BorderRadius.circular(10),
+                      //   ),
+                      //   textColor: Colors.white,
+                      //   onPressed: () {
+                      //     if (_emailController.text.isEmpty) {}
+                      //   },
+                      // ),
+                      child: TextButton(
                         onPressed: () {
                           if (_emailController.text.isEmpty) {}
                         },
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          minimumSize:
+                              Size(MediaQuery.of(context).size.width, 50),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        child: Text('Login',
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18)),
                       ),
                     ),
                   ),
