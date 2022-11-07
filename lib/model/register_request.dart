@@ -4,7 +4,7 @@ class SignUpModel {
   String phone;
   String password2;
   String password;
-  bool tc;
+  bool is_driver;
   bool is_admin;
 
   SignUpModel(
@@ -14,7 +14,7 @@ class SignUpModel {
       this.email = '',
       this.password,
       this.is_admin,
-      this.tc});
+      this.is_driver});
 
   SignUpModel.fromJson(Map<String, dynamic> json) {
     name = json['name'];
@@ -23,7 +23,7 @@ class SignUpModel {
     email = json['email'];
     password = json['password'];
     is_admin = json['is_admin'];
-    tc = json['tc'];
+    is_driver = json['is_driver'];
   }
 
   Map<String, dynamic> toJson() {
@@ -33,7 +33,7 @@ class SignUpModel {
     data['phone_number'] = this.phone;
     data['email'] = this.email;
     data['password'] = this.password;
-    data['tc'] = this.tc;
+    data['is_driver'] = this.is_driver;
     data['is_admin'] = this.is_admin;
     return data;
   }
