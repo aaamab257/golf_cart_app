@@ -374,6 +374,11 @@ class _RegisterPageScreenScreen extends State<RegisterPageScreen> {
                                     showCustomSnackBar(
                                         'Phone Number Must start with 5',
                                         context);
+                                  } else if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+      .hasMatch(email)) {
+                                    showCustomSnackBar(
+                                        'Please Enter a valid Email',
+                                        context);
                                   } else {
                                     String email = _emailController.text;
                                     String name = _nameController.text;
