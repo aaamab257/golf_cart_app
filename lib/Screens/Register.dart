@@ -346,6 +346,8 @@ class _RegisterPageScreenScreen extends State<RegisterPageScreen> {
                                   borderRadius: BorderRadius.circular(30)),
                               child: TextButton(
                                 onPressed: () {
+                                  RegExp regex =
+        RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
                                   if (_nameController.text.isEmpty) {
                                     showCustomSnackBar(
                                         'Please Enter your name', context);
@@ -365,16 +367,22 @@ class _RegisterPageScreenScreen extends State<RegisterPageScreen> {
                                       _password2Controller.text) {
                                     showCustomSnackBar(
                                         'Passwords do not match', context);
+                                  }else if (_passwordController.text.length < 8 ) {
+                                    showCustomSnackBar(
+                                        'Passwords Must be at least 8 digits', context);
                                   } else if (_phoneController.text.length >
                                       10) {
                                     showCustomSnackBar(
                                         'Phone Number not valid', context);
-                                  } else if (!_phoneController.text
+                                  } else if (!regex.hasMatch(_passwordController.text)) {
+                                    showCustomSnackBar(
+                                        'Password must have 1 Upper case , 1 lowercase , 1 Numeric Number and Allow Character ( ! @ # $ & * ~ )', context);
+                                  }else if (!_phoneController.text
                                       .startsWith('5')) {
                                     showCustomSnackBar(
                                         'Phone Number Must start with 5',
                                         context);
-                                  } else if (RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                  } else if (!RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
       .hasMatch(email)) {
                                     showCustomSnackBar(
                                         'Please Enter a valid Email',
